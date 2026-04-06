@@ -9,7 +9,6 @@ interface SettingsState extends AppSettings {
 export const useSettingsStore = create<SettingsState>()(
   persist(
     (set) => ({
-      apiKey: '',
       textModel: 'gpt-4o',
       imageModel: 'gpt-image-1',
       imageSize: '1024x1024' as const,

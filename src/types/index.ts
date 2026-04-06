@@ -58,7 +58,6 @@ export interface Project {
 }
 
 export interface AppSettings {
-  apiKey: string;
   textModel: string;
   imageModel: string;
   imageSize: '1024x1024' | '1024x1536' | '1536x1024';

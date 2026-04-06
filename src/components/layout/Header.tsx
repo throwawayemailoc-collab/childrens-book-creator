@@ -12,7 +12,7 @@ import { ConfirmDialog } from '@/components/ui/confirm-dialog'
 import { toast } from '@/stores/toastStore'
 
 function SettingsDialog({ open, onOpenChange }: { open: boolean; onOpenChange: (v: boolean) => void }) {
-  const { apiKey, textModel, imageModel, imageSize, imageQuality, updateSettings } = useSettingsStore()
+  const { textModel, imageModel, imageSize, imageQuality, updateSettings } = useSettingsStore()
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -21,16 +21,6 @@ function SettingsDialog({ open, onOpenChange }: { open: boolean; onOpenChange: (
       </DialogHeader>
       <DialogContent>
         <div className="space-y-4">
-          <div className="space-y-2">
-            <Label>OpenAI API Key</Label>
-            <Input
-              type="password"
-              value={apiKey}
-              onChange={(e) => updateSettings({ apiKey: e.target.value })}
-              placeholder="sk-..."
-            />
-            <p className="text-xs text-muted-foreground">Your key is stored locally and never sent to any server except OpenAI.</p>
-          </div>
           <div className="space-y-2">
             <Label>Text Model</Label>
             <Select value={textModel} onChange={(e) => updateSettings({ textModel: e.target.value })}>
